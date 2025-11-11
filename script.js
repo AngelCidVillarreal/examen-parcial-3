@@ -18,6 +18,7 @@ const PRECIOS_PAN = {
 
 const PRECIO_ADICIONAL = 5.00;
 const COSTO_DOMICILIO = 30.00;
+const TASA_IVA = 1.16;
 
 function calcularBaguette() { 
     var subtotal = 0;
@@ -62,9 +63,15 @@ function calcularBaguette() {
     if (esDomicilio) {
         totalConDomicilio += COSTO_DOMICILIO;
     }
+// agrege el iva :D
+    var totalConIVA = totalConDomicilio * TASA_IVA;
 
-    document.getElementById("total");
 
+    document.getElementById("total").innerHTML = "Total: " + totalConIVA.toLocaleString('es-MX', { 
+        style: 'currency', 
+        currency: 'MXN' 
+    });
+}
 
 
 pedidoForm.addEventListener('change', calcularBaguette);
