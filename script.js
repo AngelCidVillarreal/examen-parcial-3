@@ -18,6 +18,7 @@ const PRECIOS_PAN = {
 
 const PRECIO_ADICIONAL = 5.00;
 const COSTO_DOMICILIO = 30.00;
+//agrege iva :D
 const TASA_IVA = 1.16;
 
 function calcularBaguette() { 
